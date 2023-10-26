@@ -53,7 +53,7 @@ public class Generador {
     public String generarUsuario (){
         Scanner scanner = new Scanner(System.in);
         int menu2=0;
-        String usuario=null;
+        String usuario="";
         do {
         System.out.println("1. Guardar contraseña");
         System.out.println("2.Salir");
@@ -70,6 +70,15 @@ public class Generador {
         }
         }while (menu2!=1);
         return usuario;
+    }
+    public String generarPalabraClave (){
+        Scanner scanner = new Scanner(System.in);
+        int menu2=0;
+        String plat="";
+                System.out.println("Ingrese la plataforma a la que corresponden estos datos");
+                plat = scanner.next();
+
+        return plat;
     }
 
     }
