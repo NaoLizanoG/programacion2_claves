@@ -2,8 +2,13 @@
 
 public class Main {
     public static void main(String[] args) {
-        Generador clave1 = new Generador();
-        clave1.generar();
+
+        Menus menu1 = new Menus();
+
+        menu1.menu();
+
+
+
 
 
     }

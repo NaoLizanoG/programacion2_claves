@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.security.SecureRandom;
 import java.util.Random;
 import java.util.Scanner;
@@ -12,15 +13,8 @@ public class Generador {
 
 ////////////////////////////////////////////////////////////////////////////////////////
     public Generador(){
-
     }
 
-    public Generador(String minusculas, String mayusculas, String num, String especiales){
-        this.minusculas=minusculas;
-        this.mayusculas=mayusculas;
-        this.num=num;
-        this.especiales=especiales;
-    }
 
 
     public String pswgen(int lenght) {
@@ -41,27 +35,41 @@ public class Generador {
 
     }
 
-    public void generar(){
+    public String generar(){
         int i=0;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Por favor, ingrese la longitud de su contraseña a ser generada: ");
+        int longitud = scanner.nextInt();
+        while (longitud<8) {
+            System.out.println("Su contraseña no será segura, debe tener minimo 8 caracteres");
+            System.out.println("Inténtelo de nuevo");
+            longitud = scanner.nextInt();
+        }
+        String pswgen = pswgen(longitud);
+        System.out.println("Contraseña generada con éxito: " + pswgen);
+        return pswgen;
+    }
 
+    public String generarUsuario (){
+        Scanner scanner = new Scanner(System.in);
+        int menu2=0;
+        String usuario=null;
         do {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Por favor, ingrese la longitud de su contraseña a ser generada: ");
-            int longitud = scanner.nextInt();
+        System.out.println("1. Guardar contraseña");
+        System.out.println("2.Salir");
+        menu2 = scanner.nextInt();
+        if (menu2==1){
+            System.out.println("Ingrese el usuario correspondiente a esta contraseña");
+            usuario = scanner.next();
 
-            if (longitud <= 0) {
-                System.out.println("Valor inválido");
-
-            } else if (longitud < 8 && longitud > 0) {
-                System.out.println("Su contraseña no será segura, debe tener minimo 8 caracteres");
-
-            } else {
-                String pswgen = pswgen(longitud);
-                System.out.println("Contraseñaa generada con éxito: " + pswgen);
-                i=1;
-
-            }
-        }while (i!=1);
+        } else if (menu2==2) {
+        break;
+        }
+        else {
+            System.out.println("Numero inválido");
+        }
+        }while (menu2!=1);
+        return usuario;
     }
 
     }
