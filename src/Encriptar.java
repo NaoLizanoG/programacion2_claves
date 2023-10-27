@@ -17,7 +17,7 @@ import java.security.Key;
 
 public class Encriptar {
 
-    private static final String claveSecreta = "mySuperSecretKey";  // This should be stored securely
+    private static final String claveSecreta = "aopmencyiosklehy";  // This should be stored securely
 
 
     public static String encriptarAES(String original) {
