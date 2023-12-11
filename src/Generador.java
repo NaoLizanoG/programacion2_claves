@@ -2,7 +2,7 @@ import java.awt.*;
 import java.security.SecureRandom;
 import java.util.Random;
 import java.util.Scanner;
-public class Generador {
+public class Generador extends Claves{
 
     //declaramos con final para evitar modificación del contenido en cualquier parte del código:
    /* serán llamados en conjunto como libelementos a la hora de la generacion de claves*/
@@ -35,22 +35,25 @@ public class Generador {
 
     }
 
-    public String generar(){
-        int i=0;
+    @Override
+    public String ingresar(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Por favor, ingrese la longitud de su contraseña a ser generada: ");
         int longitud = scanner.nextInt();
-        while (longitud<8) {
+        boolean a= Longitud(longitud);
+
+        while (a==false) {
             System.out.println("Su contraseña no será segura, debe tener minimo 8 caracteres");
             System.out.println("Inténtelo de nuevo");
             longitud = scanner.nextInt();
+            a= Longitud(longitud);
         }
         String pswgen = pswgen(longitud);
         System.out.println("Contraseña generada con éxito: " + pswgen);
         return pswgen;
     }
 
-    public String generarUsuario (){
+   /* public String generarUsuario (){
         Scanner scanner = new Scanner(System.in);
         int menu2=0;
         String usuario="";
@@ -79,6 +82,6 @@ public class Generador {
                 plat = scanner.next();
 
         return plat;
-    }
+    }*/
 
-    }
+}

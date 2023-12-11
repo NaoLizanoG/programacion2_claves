@@ -27,6 +27,9 @@ public class Boveda {
     public void mostrarUsuario (String plat){
         System.out.println("El usuario es:"+mapUsuarios.get(plat));
     }
+   /* public void cambiarClave(String plat){
+        mapClaves.put("clave1", 10)
+    }*/
 
 
 }
