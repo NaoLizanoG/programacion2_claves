@@ -49,6 +49,3 @@ public class Encriptar {
         return new SecretKeySpec(claveSecreta.getBytes(), "AES");
     }
 }
-
-
-

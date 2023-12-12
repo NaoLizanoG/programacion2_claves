@@ -7,6 +7,7 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.Key;
 import java.util.Base64;
+import java.util.Scanner;
 
 public class Boveda {
     private Map<String,String> mapClaves= new HashMap<>();
@@ -26,6 +27,21 @@ public class Boveda {
     }
     public void mostrarUsuario (String plat){
         System.out.println("El usuario es:"+mapUsuarios.get(plat));
+    }
+    public void cambiarClave(String plat){
+        System.out.println("Ingrese la nueva clave");
+        Scanner scanner = new Scanner(System.in);
+        String claven = scanner.next();
+        mapClaves.put(plat, claven);
+        System.out.println("La clave nueva es:"+mapClaves.get(plat));
+    }
+
+    public void cambiarUsuario(String plat){
+        System.out.println("Ingrese el nuevo usuario");
+        Scanner scanner = new Scanner(System.in);
+        String usuarion = scanner.next();
+        mapUsuarios.put(plat, usuarion);
+        System.out.println("La clave nueva es:"+mapUsuarios.get(plat));
     }
 
 
