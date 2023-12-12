@@ -15,7 +15,7 @@ public abstract class Claves {
 
     public String generarUsuario (){
         Scanner scanner = new Scanner(System.in);
-        int menu2=0;
+        /*int menu2=0;
         String usuario="";
         do {
             System.out.println("1. Guardar contraseña");
@@ -32,6 +32,9 @@ public abstract class Claves {
                 System.out.println("Numero inválido");
             }
         }while (menu2!=1);
+        return usuario;*/
+        System.out.println("Ingrese el usuario correspondiente a esta contraseña");
+        String usuario = scanner.next();
         return usuario;
     }
     public String generarPalabraClave (){
@@ -43,6 +46,8 @@ public abstract class Claves {
 
         return plat;
     }
+
+
 
 
     }
